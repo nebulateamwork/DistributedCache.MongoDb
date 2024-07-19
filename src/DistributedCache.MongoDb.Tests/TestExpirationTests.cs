@@ -232,6 +232,33 @@ public class TimeExpirationTests
     }
 
     [Fact]
+    public void SlidingExpirationRenewedByRefresh()
+    {
+        var cache = MongoDbTestConfig.CreateCacheInstance(GetType().Name);
+        var key = GetNameAndReset(cache);
+        var value = new byte[1];
+
+        cache.Set(key, value, new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(1)));
+
+        var result = cache.Get(key);
+        Assert.Equal(value, result);
+
+        for (int i = 0; i < 5; i++)
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(0.5));
+
+            cache.Refresh(key);
+        }
+
+        result = cache.Get(key);
+        Assert.NotNull(result);
+
+        Thread.Sleep(TimeSpan.FromSeconds(3));
+        result = cache.Get(key);
+        Assert.Null(result);
+    }
+
+    [Fact]
     public void SlidingExpirationRenewedByAccessUntilAbsoluteExpiration()
     {
         var cache = MongoDbTestConfig.CreateCacheInstance(GetType().Name);

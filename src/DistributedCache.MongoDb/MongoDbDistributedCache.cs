@@ -87,12 +87,13 @@ public class MongoDbDistributedCache : IDistributedCache
 
     public void Refresh(string key)
     {
-        throw new NotImplementedException();
+        //Get refresh the cache it is the easiest way to do it
+        Get(key);
     }
 
     public Task RefreshAsync(string key, CancellationToken token = default)
     {
-        throw new NotImplementedException();
+        return GetAsync(key, token);
     }
 
     public void Remove(string key)
