@@ -19,12 +19,13 @@
 
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <PackageId>NebulaTeam.DistributedCache.MongoDb</PackageId>
+    <PackageId>TeamNebula.DistributedCache.MongoDb</PackageId>
     <Product>Distributed cache for MongoDb</Product>
     <Description>An opinionated implementation of IDistributedCache interface.</Description>
     <PackageTags>asp.net, caching, cache</PackageTags>
-    <Authors>NebulaTeam</Authors>
-    <Company>NebulaTeam</Company>
+    <Authors>Team Nebula</Authors>
+    <Company>Team Nebula</Company>
+    <PackageProjectUrl>https://teamnebula.it/</PackageProjectUrl>
     <Copyright>Copyright 2024 ©</Copyright>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
