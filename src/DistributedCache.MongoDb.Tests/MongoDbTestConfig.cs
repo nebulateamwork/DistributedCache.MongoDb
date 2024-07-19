@@ -20,7 +20,7 @@ internal static class MongoDbTestConfig
         return new MongoDbDistributedCache(new MongoDbDistributedCacheOptions
         {
             ConnectionString = envConnectionString,
-            DatabaseName = $"test-mongodb-cache-{cacheName}",
+            DatabaseName = $"test-{cacheName}",
             CollectionNme = "test-cache",
         });
     }
