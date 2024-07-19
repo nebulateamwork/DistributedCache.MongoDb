@@ -47,7 +47,7 @@ jobs:
         env:
           MONGODB_TEST_CONNECTION_STRING: 'mongodb://admin:123456@localhost:27017'
         run: |
-          ./build.ps1 -nugetPublish $false -nugetApiKey ${{ secrets.NUGET_API_KEY }}
+          ./build.ps1 -nugetPublish $true -nugetApiKey ${{ secrets.NUGET_API_KEY }}
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
