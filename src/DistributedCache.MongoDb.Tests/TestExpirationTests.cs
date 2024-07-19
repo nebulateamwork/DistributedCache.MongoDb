@@ -1,12 +1,14 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
-using Microsoft.Extensions.Caching.Distributed;
+﻿using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
 using System.Runtime.CompilerServices;
 
 namespace DistributedCache.MongoDb.Tests;
 
+/// <summary>
+/// Copied from the standard test used by redis implementation
+/// in aspnetcore repository 
+/// https://raw.githubusercontent.com/dotnet/aspnetcore/662d200bc4feb11a01895e675fbfee8517c6fe2a/src/Caching/StackExchangeRedis/test/TimeExpirationTests.cs
+/// </summary>
 public class TimeExpirationTests
 {
     // async twin to ExceptionAssert.ThrowsArgumentOutOfRange
