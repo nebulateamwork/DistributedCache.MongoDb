@@ -10,9 +10,16 @@ internal static class MongoDbTestConfig
 {
     public static MongoDbDistributedCache CreateCacheInstance(string cacheName) 
     {
+        var envConnectionString = Environment.GetEnvironmentVariable("MONGODB_TEST_CONNECTION_STRING");
+        
+        if (string.IsNullOrWhiteSpace(envConnectionString))
+        {
+            envConnectionString = "mongodb://admin:123456##@localhost:27017";
+        }
+
         return new MongoDbDistributedCache(new MongoDbDistributedCacheOptions
         {
-            ConnectionString = "mongodb://admin:123456##@localhost:27017",
+            ConnectionString = envConnectionString,
             DatabaseName = $"test-mongodb-cache-{cacheName}",
             CollectionNme = "test-cache",
         });

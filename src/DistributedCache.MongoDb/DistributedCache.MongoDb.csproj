@@ -4,11 +4,42 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
+    <RollForward>LatestMajor</RollForward>
+    <AssemblyName>DistributedCache.MongoDb</AssemblyName>
+    <RootNamespace>DistributedCache.MongoDb</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">True</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NebulaTeam.DistributedCache.MongoDb</PackageId>
+    <Product>Distributed cache for MongoDb</Product>
+    <Description>An opinionated implementation of IDistributedCache interface.</Description>
+    <PackageTags>asp.net, caching, cache</PackageTags>
+    <Authors>NebulaTeam</Authors>
+    <Company>NebulaTeam</Company>
+    <Copyright>Copyright 2024 ©</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/nebulateamwork/DistributedCache.MongoDb</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="8.0.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.27.0" />
+    <None Include="..\..\README.md" Link="README.md" Pack="true" PackagePath="." Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions"/>
+    <PackageReference Include="MongoDB.Driver" />
   </ItemGroup>
 
 </Project>
