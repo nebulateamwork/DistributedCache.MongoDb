@@ -1,9 +1,6 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Caching.Distributed;
+﻿using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
-using Xunit;
+using System.Runtime.CompilerServices;
 
 namespace DistributedCache.MongoDb.Tests;
 
