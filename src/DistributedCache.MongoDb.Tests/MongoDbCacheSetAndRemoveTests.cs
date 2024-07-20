@@ -89,10 +89,10 @@ public class MongoDbCacheSetAndRemoveTests
     public void SetNullValueThrows()
     {
         var cache = MongoDbTestConfig.CreateCacheInstance(GetType().Name);
-        byte[] value = null;
+        byte[]? value = null;
         string key = "myKey";
 
-        Assert.Throws<ArgumentNullException>(() => cache.Set(key, value));
+        Assert.Throws<ArgumentNullException>(() => cache.Set(key, value!));
     }
 
     [Fact]
@@ -136,7 +136,7 @@ public class MongoDbCacheSetAndRemoveTests
         cache.SetString(key, payload);
 
         // check raw bytes
-        var raw = cache.Get(key);
+        var raw = cache.Get(key)!;
         Assert.Equal(Hex(payload), Hex(raw));
 
         // check via string API
@@ -160,7 +160,7 @@ public class MongoDbCacheSetAndRemoveTests
 
         // check raw bytes
         var raw = await cache.GetAsync(key);
-        Assert.Equal(Hex(payload), Hex(raw));
+        Assert.Equal(Hex(payload), Hex(raw!));
 
         // check via string API
         var value = await cache.GetStringAsync(key);

@@ -20,7 +20,7 @@ public static class StackExchangeRedisCacheServiceCollectionExtensions
         this IServiceCollection services, 
         Action<MongoDbDistributedCacheOptions> setupAction)
     {
-        var options = new MongoDbDistributedCache();
+        var options = new MongoDbDistributedCacheOptions();
         setupAction(options);
         services.AddSingleton(options);
         services.Add(

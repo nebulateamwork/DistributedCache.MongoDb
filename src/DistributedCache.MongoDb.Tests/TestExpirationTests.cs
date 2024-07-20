@@ -56,7 +56,7 @@ public class TimeExpirationTests
 
         cache.Set(key, value, new DistributedCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(1)));
 
-        byte[] result = cache.Get(key);
+        byte[]? result = cache.Get(key);
         Assert.Equal(value, result);
 
         for (int i = 0; i < 4 && result != null; i++)
