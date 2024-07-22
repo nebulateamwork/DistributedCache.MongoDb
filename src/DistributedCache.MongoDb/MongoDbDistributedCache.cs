@@ -23,7 +23,7 @@ public class MongoDbDistributedCache : IDistributedCache
         _mongoDbClient = mongoDbDistributedCacheOptions.CreateClient();
 
         _db = _mongoDbClient.GetDatabase(mongoDbDistributedCacheOptions.DatabaseName);
-        _collection = _db.GetCollection<MongoDbCacheEntry>(mongoDbDistributedCacheOptions.CollectionNme);
+        _collection = _db.GetCollection<MongoDbCacheEntry>(mongoDbDistributedCacheOptions.CollectionName);
 
         //Create expire indes so the index will automatically expire after time 
         //is reached

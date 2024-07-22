@@ -21,7 +21,7 @@ internal static class MongoDbTestConfig
         {
             ConnectionString = envConnectionString,
             DatabaseName = $"test-{cacheName}",
-            CollectionNme = "test-cache",
+            CollectionName = "test-cache",
         });
     }
 }

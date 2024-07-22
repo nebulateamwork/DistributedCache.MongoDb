@@ -20,7 +20,7 @@ public class MongoDbDistributedCacheOptions
     /// <summary>
     /// Name of the collection used to store the cache entries
     /// </summary>
-    public string CollectionNme { get; set; } = "distributed-cache";
+    public string CollectionName { get; set; } = "distributed-cache";
 
     /// <summary>
     /// To connect to Mongodb we can use the connection string or the
@@ -35,7 +35,7 @@ public class MongoDbDistributedCacheOptions
     /// <summary>
     /// If not specified the absolute duration of the cache.
     /// </summary>
-    public double DefaultCacheDurationsInMinutes { get; internal set; } = 30;
+    public double DefaultCacheDurationsInMinutes { get; set; } = 30;
 
     internal IMongoClient CreateClient()
     {
